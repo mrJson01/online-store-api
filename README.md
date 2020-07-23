@@ -11,7 +11,7 @@ specific information about the device. Last column is img (can be Null or "")
 
 Typ:
 database in which you can add specific for a given device .You can as much columns as you want
-but id must be a foreign key referened to stock.id
+but id must be a foreign key referenced to stock.id
 
 
 This api:
