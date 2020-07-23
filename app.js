@@ -3,7 +3,7 @@ const body = require('body-parser');
 const path = require('path');
 
 const err = require('./error');
-const router = require('./router/index');
+const router = require('./index');
 
 const app = express();
 
