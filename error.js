@@ -1,3 +1,3 @@
-exports.errorHandle = (error,req,res)=>{
-	// console.log(error);
+exports.errorHandle = (error,req,res,next)=>{
+	res.render('error',{message:error.message});
 }

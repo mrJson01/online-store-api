@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+body
+{
+	font-family:'Roboto',sans-serif;
+	font-size:12px;
+}
+
+#fil{font-size:13px;}
+
+nav
+{
+	z-index:100;
+}
+
+.img
+{
+	width:100%;
+	padding:50px;
+	padding-bottom:0;
+	position:relative;
+
+}
+
+#button-div
+{
+	z-index:1000;
+	width:100%;
+	background-color:white;
+	padding:7px;
+	padding-left:0;
+	top:0px;
+	left:0px;
+}
+
+#promo-container
+{
+	top:50px;
+	left:50px;
+	max-width:1451px;
+	position:absolute;
+	display:flex;
+	flex-flow:row wrap;
+}
+
+#promo-container #flex-block
+{
+	flex:1;
+
+}
+
+.sticky-top{
+	max-width:250px;
+}
+
+
+
+@media screen and (max-width:768px)
+{ 
+	#fil
+	{
+		position:fixed;
+		z-index:110;
+		background-color:white;
+		top:160px;
+		left:0;
+		bottom:0;
+		right:0;
+		transform:translateX(-100%);
+		width:100vw;
+		margin-bottom:0;
+	}
+	.sticky-top
+	{
+		max-width: 100vw;
+	}
+
+}
+
+input[type=checkbox]
+{
+	width:13px;
+	height:13px;
+	margin-right:5px;
+}
+
+/*input[type=checkbox]
+{
+	appearance:none;
+	display:none;
+}
+
+input[type=checkbox]:checked ~label::before
+{
+	background-color:black;
+}
+
+label::before
+{
+	content:"";
+	display:block;
+	position:relative;
+	margin-right:5px;
+	width:17px;
+	height:17px;
+	background-color:white;
+	border:.5px solid grey;
+	border-radius:5px;
+}*/

@@ -1,6 +1,9 @@
 const express = require('express');
 const body = require('body-parser');
+const cookie = require('cookie-parser');
+const session = require('express-session');
 const path = require('path');
+const flash = require('flash');
 
 const err = require('./error');
 const router = require('./index');
@@ -13,13 +16,16 @@ app.use(express.static('public'));
 
 app.use(body.json());
 app.use(body.urlencoded({extended:true}));
+app.use(cookie());
 
-app.use((req,res,next)=>{
-	if(req.originalUrl ==='/favicon.ico'){
-		res.status(204).json({nope:true});
-	}
-	else next();
-})
+app.use(session({
+	secret:'store',
+	resave:false,
+	saveUninitialized:true,
+	cookie:{}
+}));
+
+app.use(flash());
 
 app.use('/',router);
 
