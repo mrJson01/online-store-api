@@ -19,3 +19,5 @@ Firstly- specify a content which is a filtered or not filtered columns from data
 Secoundly - return a filter list which is based on the Typ database columns names and only distinced values of them
 
  first and secound functions are same but it specified whether it 's defined filters or not
+ 
+ #In this version I applay no-reloading page content uploading what made a POST request handling unnecessary
