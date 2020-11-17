@@ -14,7 +14,7 @@ function isEmpty(obj)
 exports.Content = (req,res,next)=>{
 	const typ = req.params.typ;
 
-	console.log(req.body);
+	//console.log(req.body);
 
 	var filtr='(1=1';
 	if(!isEmpty(req.body))
