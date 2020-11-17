@@ -84,6 +84,77 @@ input[type=checkbox]
 	margin-right:5px;
 }
 
+.card
+{
+	width:260px;
+	margin-left:10px;
+	margin-right:10px;
+	margin:auto;
+}
+
+.card .card-img-top
+{
+	max-height:240px;
+}
+
+@media screen and (max-width:1650px)
+{
+	.card
+	{
+		width:280px;
+	}
+}
+
+@media screen and (max-width:1540px)
+{
+	.card
+	{
+		width:250px;
+	}
+}
+
+@media screen and (max-width:1270px)
+{
+	.card
+	{
+		width:240px;
+	}
+}
+
+@media screen and (max-width:1030px)
+{
+	.card
+	{
+		width:220px;
+	}
+}
+
+@media screen and (max-width:992px)
+{
+	.card
+	{
+		width:270px;
+	}
+}
+
+@media screen and (max-width:875px)
+{
+	.card
+	{
+		width:280px;
+		margin:auto;
+	}
+}
+
+@media screen and (max-width:768px)
+{
+	.card
+	{
+		width:265px;
+	}
+}
+
+
 /*input[type=checkbox]
 {
 	appearance:none;
