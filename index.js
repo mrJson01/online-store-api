@@ -41,7 +41,8 @@ router.post('/admin',controler.Recaptcha);
 router.get('/admin/dashboard',controler.Dashboard);
 router.post('/admin/dashboard/add/:typ',controlerResources.Columns,controlerAdd.FetchingData,[
 		// CASE 1
-		body('fileds.*').isAlphanumeric().withMessage('Field should contains only letters and nubers'),
+		body('fileds.*').matches(/^[A-Za-z0-9\-_&]+[A-Za-z0-9\s\-_&]{0,}$/).withMessage('Field can contains letters,nubers and signs(-_&)'),
+        body('fileds.cena').isNumeric('Prize should be an number'),
 		// CASE 4
 		body('fileds.nazwa').custom(value=>{
 			return Find(value).then(data =>{
