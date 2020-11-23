@@ -43,6 +43,17 @@ main{
 	height:auto;
 }
 
+main .feedback-block{
+    max-width:500px;
+    color: white;
+}
+main .feedback-block ul{
+    list-style-type:none;
+}
+main .feedback-block ul>li::before{
+    content:'\2192';
+}
+
 footer{
 	width:100%;
 	position:relative;

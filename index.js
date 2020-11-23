@@ -46,7 +46,7 @@ router.post('/admin/dashboard/add/:typ',controlerResources.Columns,controlerAdd.
 		// CASE 4
 		body('fileds.nazwa').custom(value=>{
 			return Find(value).then(data =>{
-				if(data.length)return Promise.reject('Podana nazwa już jest zajęta');
+				if(data.length)return Promise.reject('Given name is asigned');
 			})
 		})
 	],(req,res,next)=>{

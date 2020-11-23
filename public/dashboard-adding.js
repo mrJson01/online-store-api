@@ -52,9 +52,34 @@ function submit_add(e){
 	}).then(res=>{return res.json()})
 	.then(data=>{
 		console.log(data);
+        
+        //NIC NIE BĘDZIE DODAWANE DO MSG , WSZYSTKO UWSTALANE NA SERWERZE
+        let [array_what_was,feedback] = [new Array(),""];
+        
+        $.each(data,function(key,val){
+            if(key==="case1"){
+                $.each(val,function(keys,vals){
+                    if(array_what_was.indexOf(vals.msg)===-1){
+                        feedback+=`<li>${vals.msg}</li>`;
+                        array_what_was.push(vals.msg);
+                    }
+                });
+                
+            }
+            else{
+                feedback+=`<li>${val.msg}</li>`; 
+            }
+        
+        });
+        let end = `<div class="error-block mx-auto p-3 bg-danger"><ul>${feedback}</ul></div>`;
+        
+        (document.querySelector('main .error-block')) ? $(end).replaceAll('main .error-block') : $('main form').before(end);
 	});
 
 }
 
 
 // console.log('active');
+/*if(data['msg']!==undefined){
+            $('main').empty().html(`<div class="feedback-block mx-auto my-auto p-3 bg-success"><ul><li>${data.msg}</li></ul></div>`)
+        }*/

@@ -28,7 +28,7 @@ exports.FetchingData = (columns,req,res,next)=>{
 
 		if((headers['content-type']!='image/png')&&(headers['content-type']!='image/jpg')&&(headers['content-type']!='image/jpeg'))
 		{
-			msg='File should be an png';
+			msg='File should be an png,jpg or jpeg';
 			flaga = false;
 		}
 		else
