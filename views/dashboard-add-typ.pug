@@ -1,0 +1,14 @@
+div.form-row
+	each val of columns
+		div.form-group.col-md-6.col-xl-4
+			- var name = val.name = val.name.replace(/_/g," ")
+			label.mb-1.text-wrap=name
+			input.form-control(type=val.type name=val.name maxlength=val.size required)
+
+div.form-row.col-md-6
+	label.mb-1.text-wrap="Cena"
+	input.form-control(type="number" name="cena" max="10000" required)
+
+div.form-row.d-flew.justify-content-center
+	button.btn.btn-outline-success.my-3(type="submit")="Prześlij produkt"
+	

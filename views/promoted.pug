@@ -1,0 +1,6 @@
+div#promo-container
+	each i of which
+		div#flex-block
+			each val of obj[i]
+				p=val
+			img.img-fluid(src=picture[i] alt="img of promoted product")

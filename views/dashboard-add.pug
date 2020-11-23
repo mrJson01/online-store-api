@@ -1,0 +1,33 @@
+form#form-add-product.ml-md-auto.p-5.w-75(method="POST" enctype="multipart/form-data" action="/admin/dashboard/add")
+	
+	div.form-row
+		div.form-group.col-md-6
+			label.mb-1(for="input_nazwa")="Nazwa produktu"
+			input#input_nazwa.form-control(type="text" name="nazwa" required)
+
+		div.form-group.col-md-6
+			label.mb-1(for="input_typ")="Typ produktu"
+			select#input_typ.form-control(name='typ' required)
+				option(disabled selected)
+					='wybierz typ'
+				each val of typs
+					option(value=val)
+						=val
+
+		div.form-group.col-md-6.offset-md-3
+			div.custom-file
+				input#input_file.custom-file-input(type="file" name="img" required)
+				label.custom-file-label(for="input_file")="Wybierz zdjęcie produktu"
+
+
+		div#img-div.col-12.form-group
+			div#img-card.card.justify-content-center.align-items-center
+				img
+
+
+//div.form-group.col-12.col-md-8.py-4.offset-md-2
+
+//script(src="/dashboard-adding.js" type="text/javascript")
+
+script
+	!=js

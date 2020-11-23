@@ -1,0 +1,12 @@
+div.container
+	div.row.my-5.align-center
+		each val,index in obj
+		
+			div.height.col-lg-3.col-6.my-5cardes
+				each opis,id in obj[index]
+					- var nazwa = id.replace(/_/gi,' ');
+
+					p=nazwa+" : "+opis
+
+			div.height.col-lg-3.col-6.my-4
+				img.img-fluid(src=pic[index])
