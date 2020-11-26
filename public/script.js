@@ -22,6 +22,44 @@ const filtrs = (e)=>{
 $('#button-div .btn').on('click',function(){open(event);})
 
 
+$('#fil .bracket').each(function(ind,val){
+
+    if($(this).children().length>3)
+        {
+            $(this).append('<div class="hiden"style="margin-top:-1px;"></div>');
+            $(this).children(":nth-of-type(4)").nextAll().addBack().appendTo($(this).children(".hiden"));
+            $(this).append('<button class="d-block ml-auto border-0" type="button" style="background-color:white;"></button>').find('button').load('caret-down-solid.svg',function(){
+                let html = $(this).html();
+                
+                $(this).append(html);
+            });
+            
+            
+            let that = this;
+            if($(window).width()>=768)
+                {
+                    $(this).children('.hiden').slideUp(300,function(){
+                        $(this).next().click(function(e){
+                            $(that).find('.hiden').slideToggle();
+                        });
+                    });
+                }
+            else{
+                    $(this).children('.hiden').next().click(function(e){
+                            $(that).find('.hiden').slideToggle();
+                        });
+                }
+//            $(this).find('button').click(function(){
+//                $(this).prev().toggle();
+//            });
+            
+        }
+    
+});
+
+function change(){
+    $(this).toggle('slow');
+}
 
 // $('#toggle-navbar').click(function(e){
 
@@ -54,14 +92,14 @@ $('#navbarToggle').on('show.bs.collapse',()=>{
 	$('#fil').animate({
 			top:`${heightOfNav}px`
 		},0,()=>{
-			console.log('DONE!!!');
+			//console.log('DONE!!!');
 		});
 });
 $('#navbarToggle').on('hide.bs.collapse',()=>{
 	$('#fil').animate({
 			top:"56px"
 		},0,()=>{
-			console.log('DONE!!!');
+			//console.log('DONE!!!');
 		});
 })
 
@@ -97,7 +135,11 @@ $(window).resize(function(){
 		{
 			$('#fil').attr("style",'');
 			$('#fil').removeClass('ope');
+            $('#fil .bracket .hiden').slideUp();
 		}
+    else{
+            $('#fil .bracket .hiden').slideDown();
+    }
 
 	// FOR PROMOTED ITEMS ON A TOP
 	// let left = $('#img-background').offset().left;

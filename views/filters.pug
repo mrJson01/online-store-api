@@ -1,19 +1,19 @@
 form#fil.form-group.sticky-top.bg-white.d-md-block.p-3.overflow-auto(method="POST" action="/"+typs)
-	each val,key in options
-		- var named = key.replace(/_/gi,' ');
-		ul.list-group
-			h5.py-2=named +": "
-			each fil in options[key]
+    each val,key in options
+        - var named = key.replace(/_/gi,' ');
+        ul.list-group
+            h5.py-2=named +": "
+            div.bracket
+                each fil,keey in options[key]
+                    li.list-group-item.d-flex.flex-row.align-items-center
+                        if already.hasOwnProperty(key)&& already[key].includes(fil)
+                        
+                                input(type='checkbox' name=key value=fil id=key+fil checked)
+                                label.form-check-label.d-flex.flex-row(for=key+fil)=fil
+                        else
+                                
+                                input(type='checkbox' name=key value=fil id=key+fil)
+                                label.form-check-label.d-flex.flex-row(for=key+fil)=fil
+                    
 
-				li.list-group-item.d-flex.flex-row.align-items-center
-					if already.hasOwnProperty(key)&& already[key].includes(fil)
-
-							input(type='checkbox' name=key value=fil id=key+fil checked)
-							label.form-check-label.d-flex.flex-row(for=key+fil)=fil
-					else
-						
-							input(type='checkbox' name=key value=fil id=key+fil)
-							label.form-check-label.d-flex.flex-row(for=key+fil)=fil
-					
-
-	input.btn.btn-primary.mt-3(type="submit" value="Filtruj")
+    input.btn.btn-primary.mt-3(type="submit" value="Filtruj")
