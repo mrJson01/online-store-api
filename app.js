@@ -5,6 +5,7 @@ const session = require('express-session');
 const path = require('path');
 const flash = require('flash');
 const uuid = require('uuid');
+const favicon = require('serve-favicon');
 
 const err = require('./error');
 const router = require('./index');
@@ -18,6 +19,7 @@ app.set('views',path.join(__dirname,'views'));
 app.set('view engine','pug');
 app.use(express.static('public'));
 
+app.use(favicon(path.join(__dirname,"public","favicon.ico")));
 app.use(body.json());
 app.use(body.urlencoded({extended:true}));
 app.use(cookie());
@@ -33,6 +35,7 @@ app.use(session({
 	store:store,
 	cookie:{}
 }));
+
 
 app.use(flash());
 

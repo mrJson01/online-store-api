@@ -43,7 +43,9 @@ router.post('/admin/dashboard/add/:typ',controlerResources.Columns,controlerAdd.
 		// CASE 1
 		body('fileds.*').matches(/^[A-Za-z0-9\-_&]+[A-Za-z0-9\s\-_&]{0,}$/).withMessage('Field can contains letters,nubers and signs(-_&)'),
         body('fileds.cena').isNumeric('Prize should be an number'),
-		// CASE 4
+        //SANITIZATION
+        body('fileds.*').trim(),
+		// CASE 4 (BUT IT'S LIKE INCLUDED IN CASE 1)
 		body('fileds.nazwa').custom(value=>{
 			return Find(value).then(data =>{
 				if(data.length)return Promise.reject('Given name is asigned');
