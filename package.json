@@ -19,7 +19,7 @@
     "mongodb": "^3.6.2",
     "multiparty": "^4.2.2",
     "mysql": "^2.18.1",
-    "pug": "^3.0.0",
+    "pug": "^3.0.1",
     "request": "^2.88.2",
     "serve-favicon": "^2.5.0",
     "uuid": "^8.3.0"
